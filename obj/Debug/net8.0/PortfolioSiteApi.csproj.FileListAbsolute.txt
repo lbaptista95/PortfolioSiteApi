@@ -1,0 +1,8 @@
+C:\Users\lanto\OneDrive\Documentos\GitHub\PortfolioSiteApi\obj\Debug\net8.0\PortfolioSiteApi.csproj.AssemblyReference.cache
+C:\Users\lanto\OneDrive\Documentos\GitHub\PortfolioSiteApi\obj\Debug\net8.0\PortfolioSiteApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lanto\OneDrive\Documentos\GitHub\PortfolioSiteApi\obj\Debug\net8.0\PortfolioSiteApi.AssemblyInfoInputs.cache
+C:\Users\lanto\OneDrive\Documentos\GitHub\PortfolioSiteApi\obj\Debug\net8.0\PortfolioSiteApi.AssemblyInfo.cs
+C:\Users\lanto\OneDrive\Documentos\GitHub\PortfolioSiteApi\obj\Debug\net8.0\PortfolioSiteApi.csproj.CoreCompileInputs.cache
+C:\Users\lanto\OneDrive\Documentos\GitHub\PortfolioSiteApi\obj\Debug\net8.0\PortfolioSiteApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\lanto\OneDrive\Documentos\GitHub\PortfolioSiteApi\obj\Debug\net8.0\PortfolioSiteApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\lanto\OneDrive\Documentos\GitHub\PortfolioSiteApi\obj\Debug\net8.0\PortfolioSiteApi.sourcelink.json

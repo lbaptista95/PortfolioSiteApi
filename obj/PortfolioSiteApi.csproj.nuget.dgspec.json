@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lanto\\PortfolioSiteApi\\PortfolioSiteApi.csproj": {}
+    "C:\\Users\\lanto\\OneDrive\\Documentos\\GitHub\\PortfolioSiteApi\\PortfolioSiteApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lanto\\PortfolioSiteApi\\PortfolioSiteApi.csproj": {
+    "C:\\Users\\lanto\\OneDrive\\Documentos\\GitHub\\PortfolioSiteApi\\PortfolioSiteApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lanto\\PortfolioSiteApi\\PortfolioSiteApi.csproj",
+        "projectUniqueName": "C:\\Users\\lanto\\OneDrive\\Documentos\\GitHub\\PortfolioSiteApi\\PortfolioSiteApi.csproj",
         "projectName": "PortfolioSiteApi",
-        "projectPath": "C:\\Users\\lanto\\PortfolioSiteApi\\PortfolioSiteApi.csproj",
+        "projectPath": "C:\\Users\\lanto\\OneDrive\\Documentos\\GitHub\\PortfolioSiteApi\\PortfolioSiteApi.csproj",
         "packagesPath": "C:\\Users\\lanto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lanto\\PortfolioSiteApi\\obj\\",
+        "outputPath": "C:\\Users\\lanto\\OneDrive\\Documentos\\GitHub\\PortfolioSiteApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lanto\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -49,6 +49,16 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.4, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
