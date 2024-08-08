@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PortfolioSiteApi.Data;
 using PortfolioSiteApi.Models;
+using PortfolioSiteApi.Tools;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -42,6 +43,8 @@ public class UserController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<User>> PostUser(User user)
     {
+        user.Password = Encrypter.GeneratePasswordHash(user.Password);
+        
         _context.Users.Add(user);
 
         await _context.SaveChangesAsync();
