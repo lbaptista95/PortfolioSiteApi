@@ -12,4 +12,6 @@ namespace PortfolioSiteApi.Models
         public string Password { get; set; }
         public string Contact { get; set; }
         public string SocialUrl { get; set; }
+        public bool EmailConfirmed { get; set; }
+    }
 }

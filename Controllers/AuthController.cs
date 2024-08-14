@@ -37,10 +37,6 @@ public class AuthController: ControllerBase
         return Ok(new { token});
     }
 
-   
-
-   
-
     private string GenerateJwtToken(string username)
     {
         var key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_configuration["Jwt:Key"]));
