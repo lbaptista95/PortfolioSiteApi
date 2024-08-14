@@ -12,5 +12,14 @@ namespace PortfolioSiteApi.Data
         public DbSet<FieldProject> FieldsProjects { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<JobProposal> JobProposals { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Field>().ToTable("fields");
+            modelBuilder.Entity<Project>().ToTable("projects");
+            modelBuilder.Entity<FieldProject>().ToTable("fields_projects");
+            modelBuilder.Entity<User>().ToTable("users");
+            modelBuilder.Entity<JobProposal>().ToTable("job_proposals");
+        }
     }
 }
