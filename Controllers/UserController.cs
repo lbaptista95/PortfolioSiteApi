@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PortfolioSiteApi.Data;
@@ -38,6 +39,22 @@ public class UserController : ControllerBase
         }
 
         return user;
+    }
+
+     //GET api/User/{id}
+    [HttpGet("fields")]
+    public async Task<ActionResult<User>> GetUserFields(int id)
+    {
+        var userEntity = _context.Model.FindEntityType(typeof(User));
+        var userColumns = userEntity.GetProperties();
+
+        var columnsObject = userColumns.Select(p => new DbColumnInfo
+        {
+            Name = p.Name,
+            Type = p.ClrType.Name
+        }).ToList();
+
+        return Ok(columnsObject);
     }
 
     [HttpGet("confirm")]
