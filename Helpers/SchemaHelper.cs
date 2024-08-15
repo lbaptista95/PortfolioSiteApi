@@ -12,10 +12,16 @@ namespace PortfolioSiteApi.Helpers
 {
     public static class SchemaHelper
     {
-        public static List<DbColumnInfo> GetTableSchema<T>(AppDbContext dbContext) where T : class
+        public static List<DbColumnInfo> GetTableSchema<T>(AppDbContext dbContext, List<string> notIncludedColumns = null) where T : class
         {
+            notIncludedColumns = notIncludedColumns ?? new List<string>();
+            notIncludedColumns.Add("Id");
+
             var entityType = dbContext.Model.FindEntityType(typeof(T));
-            return entityType.GetProperties().Select(prop => new DbColumnInfo
+            
+            return entityType.GetProperties()
+            .Where(p=> !notIncludedColumns.Contains(p.Name))
+            .Select(prop => new DbColumnInfo
             {
                 Name = prop.Name,
                 Type = prop.ClrType.Name
