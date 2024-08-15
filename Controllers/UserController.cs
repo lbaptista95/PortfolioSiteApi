@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using PortfolioSiteApi.Data;
 using PortfolioSiteApi.Models;
 using PortfolioSiteApi.Tools;
+using PortfolioSiteApi.Helpers;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -43,18 +44,10 @@ public class UserController : ControllerBase
 
      //GET api/User/{id}
     [HttpGet("fields")]
-    public async Task<ActionResult<User>> GetUserFields(int id)
+    public async Task<ActionResult<User>> GetUserFields()
     {
-        var userEntity = _context.Model.FindEntityType(typeof(User));
-        var userColumns = userEntity.GetProperties();
-
-        var columnsObject = userColumns.Select(p => new DbColumnInfo
-        {
-            Name = p.Name,
-            Type = p.ClrType.Name
-        }).ToList();
-
-        return Ok(columnsObject);
+        var schema = SchemaHelper.GetTableSchema<User>(_context);
+        return Ok(schema);
     }
 
     [HttpGet("confirm")]
