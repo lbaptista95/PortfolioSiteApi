@@ -46,10 +46,10 @@ public class UserController : ControllerBase
     [HttpGet("fields")]
     public async Task<ActionResult<User>> GetUserFields()
     {
-        List<string> notNeededColumns = ["Id", "EmailConfirmed"];
+        List<string> notNeededColumns = ["EmailConfirmed"];
 
         var schema = SchemaHelper.GetTableSchema<User>(_context,notNeededColumns);
-        
+
         return Ok(schema);
     }
 

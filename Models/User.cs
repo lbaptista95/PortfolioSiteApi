@@ -10,7 +10,7 @@ namespace PortfolioSiteApi.Models
         public int Id { get; set; }
 
         [Column("email")]
-        public string Email;
+        public string Email {get; set;}
 
         [Column("name")]
         public string Name { get; set; }

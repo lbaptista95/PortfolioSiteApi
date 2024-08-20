@@ -17,15 +17,46 @@ namespace PortfolioSiteApi.Helpers
             notIncludedColumns = notIncludedColumns ?? new List<string>();
             notIncludedColumns.Add("Id");
 
-            var entityType = dbContext.Model.FindEntityType(typeof(T));
+            var entityType = dbContext.Model.FindEntityType(typeof(T));  
+
+            foreach(var p in entityType.GetProperties())
+            {
+                Console.WriteLine(p.Name);
+            }        
             
-            return entityType.GetProperties()
+            List<DbColumnInfo> columnList = entityType.GetProperties()            
             .Where(p=> !notIncludedColumns.Contains(p.Name))
             .Select(prop => new DbColumnInfo
             {
                 Name = prop.Name,
-                Type = prop.ClrType.Name
+                Type = CheckImportantFields(prop)
             }).ToList();
+
+            foreach(var c in columnList)
+                Console.WriteLine(c.Name);
+
+            return columnList;
+        }
+
+        private static string CheckImportantFields(IProperty property)
+        {
+            string name = property.Name;
+            string fieldType = property.ClrType.Name;
+
+            name = name.ToUpper();
+
+            if (name == "PASSWORD")
+            {
+                fieldType = "Password";
+            }
+            else if (name == "EMAIL")
+            {
+                fieldType = "Email";
+            }
+
+            return fieldType;
         }
     }
+
+
 }
