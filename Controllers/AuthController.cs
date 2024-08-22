@@ -4,6 +4,8 @@ using Microsoft.IdentityModel.Tokens;
 using PortfolioSiteApi.Data;
 using PortfolioSiteApi.Models;
 using PortfolioSiteApi.Tools;
+using PortfolioSiteApi.DTOs;
+
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -23,7 +25,7 @@ public class AuthController: ControllerBase
     }
 
     [HttpPost("login")]
-    public async Task<IActionResult> Login([FromBody] LoginModel loginModel)
+    public async Task<IActionResult> Login([FromBody] Login loginModel)
     {
         var user = await _context.Users.SingleOrDefaultAsync(u => u.Email == loginModel.Username);
 

@@ -3,13 +3,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PortfolioSiteApi.Models
 {
-    public class Field
+    public class Skill
     {
         [Key]
         [Column("id")]
         public int Id { get; set; }
-        public string FieldName { get; set; }
-        public string ProgrammingLanguage { get; set; }
-        public int YearsOfExperience { get; set; }
+
+        [Column("name")]
+        public string Name { get; set; }
+       
+        public ICollection<SkillProject> SkillProjects { get; set; }
     }
 }

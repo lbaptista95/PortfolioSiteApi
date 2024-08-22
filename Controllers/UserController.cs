@@ -5,6 +5,7 @@ using PortfolioSiteApi.Data;
 using PortfolioSiteApi.Models;
 using PortfolioSiteApi.Tools;
 using PortfolioSiteApi.Helpers;
+using PortfolioSiteApi.DTOs;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -44,7 +45,7 @@ public class UserController : ControllerBase
 
      //GET api/User/{id}
     [HttpGet("fields")]
-    public async Task<ActionResult<User>> GetUserFields()
+    public async Task<ActionResult<List<DbColumnInfo>>> GetUserFields()
     {
         List<string> notNeededColumns = ["EmailConfirmed"];
 
