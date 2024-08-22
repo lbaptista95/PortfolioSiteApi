@@ -14,13 +14,13 @@ builder.WebHost.ConfigureKestrel(options =>
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowSpecificOrigins",
-    builder =>
-    {
-        builder.WithOrigins("https://lbaptista95.github.io/PortfolioSite/")
-               .AllowAnyHeader()
-               .AllowAnyMethod();
-    });
+    // options.AddPolicy("AllowSpecificOrigins",
+    // builder =>
+    // {
+    //     builder.WithOrigins("https://lbaptista95.github.io/PortfolioSite/")
+    //            .AllowAnyHeader()
+    //            .AllowAnyMethod();
+    // });
 
     options.AddPolicy("AllowLocalhost",
     builder =>
@@ -29,6 +29,12 @@ builder.Services.AddCors(options =>
                .AllowAnyHeader()
                .AllowAnyMethod();
     });
+
+    // options.AddPolicy("AllowAny",
+    // builder => 
+    // {
+    //     builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    // });
 
 });
 
@@ -46,7 +52,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-app.UseCors();
+app.UseCors("AllowLocalhost");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -55,6 +61,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseRouting();
 
 app.UseHttpsRedirection();
 

@@ -16,7 +16,7 @@ public class ProjectController : ControllerBase
         _context = context;
     }
 
-    //GET: api/Projects
+    //GET: api/Project
 
     [HttpGet]
     public async Task<ActionResult<IEnumerable<ProjectResponse>>> GetProjects()
