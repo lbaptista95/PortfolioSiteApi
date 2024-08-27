@@ -7,6 +7,20 @@ var builder = WebApplication.CreateBuilder(args);
 
 var port = Environment.GetEnvironmentVariable("PORT") ?? "80";
 
+var smtpPwd = Environment.GetEnvironmentVariable("SMTP_PWD");
+
+if (!string.IsNullOrEmpty(smtpPwd))
+{
+    builder.Configuration["SmtpSettings:Password"] = smtpPwd;
+}
+
+var connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");
+
+if (!string.IsNullOrEmpty(connectionString))
+{
+    builder.Configuration["ConnectionStrings:DefaultConnection"] = connectionString;
+}
+
 builder.WebHost.ConfigureKestrel(options =>
 {
     options.ListenAnyIP(int.Parse(port));
