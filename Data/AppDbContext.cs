@@ -37,9 +37,9 @@ namespace PortfolioSiteApi.Data
             HasOne(mp => mp.Project).WithMany(p => p.MediaProjects).HasForeignKey(mp => mp.ProjectId);
             
             modelBuilder.Entity<MediaProject>().
-            HasOne(mp => mp.Media).WithMany(m => m.MediaProjects).HasForeignKey(mp => mp.MediaId);
+            HasOne(mp => mp.Media).WithOne(m => m.MediaProject).HasForeignKey<MediaProject>(mp=>mp.MediaId);
 
-             modelBuilder.Entity<SkillProject>()
+            modelBuilder.Entity<SkillProject>()
             .HasKey(mp => new { mp.ProjectId, mp.SkillId });
 
             modelBuilder.Entity<SkillProject>().
@@ -47,6 +47,9 @@ namespace PortfolioSiteApi.Data
             
             modelBuilder.Entity<SkillProject>().
             HasOne(sp => sp.Skill).WithMany(m => m.SkillProjects).HasForeignKey(mp => mp.SkillId);
+
+            modelBuilder.Entity<Project>().Property(p => p.Company).IsRequired(false);
+            modelBuilder.Entity<Project>().Property(p => p.Client).IsRequired(false);
         }
     }
 }

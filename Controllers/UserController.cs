@@ -6,6 +6,7 @@ using PortfolioSiteApi.Models;
 using PortfolioSiteApi.Tools;
 using PortfolioSiteApi.Helpers;
 using PortfolioSiteApi.DTOs;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -43,7 +44,7 @@ public class UserController : ControllerBase
         return user;
     }
 
-     //GET api/User/{id}
+     //GET api/User/fields
     [HttpGet("fields")]
     public async Task<ActionResult<List<DbColumnInfo>>> GetUserFields()
     {
@@ -137,6 +138,8 @@ public class UserController : ControllerBase
 
         _context.Users.Remove(user);
         await _context.SaveChangesAsync();
+
+        
 
         return NoContent();
     }

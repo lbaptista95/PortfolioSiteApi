@@ -16,6 +16,8 @@ if (!string.IsNullOrEmpty(smtpPwd))
 
 var connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");
 
+Console.WriteLine(connectionString);
+
 if (!string.IsNullOrEmpty(connectionString))
 {
     builder.Configuration["ConnectionStrings:DefaultConnection"] = connectionString;
@@ -28,27 +30,13 @@ builder.WebHost.ConfigureKestrel(options =>
 
 builder.Services.AddCors(options =>
 {
-    // options.AddPolicy("AllowSpecificOrigins",
-    // builder =>
-    // {
-    //     builder.WithOrigins("https://lbaptista95.github.io/PortfolioSite/")
-    //            .AllowAnyHeader()
-    //            .AllowAnyMethod();
-    // });
-
-    options.AddPolicy("AllowLocalhost",
+    options.AddPolicy("AllowMultipleOrigins",
     builder =>
     {
-        builder.WithOrigins("http://localhost:3000")
+        builder.WithOrigins("https://lbaptista95.github.io","http://localhost:3000")
                .AllowAnyHeader()
                .AllowAnyMethod();
     });
-
-    // options.AddPolicy("AllowAny",
-    // builder => 
-    // {
-    //     builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
-    // });
 
 });
 
@@ -66,7 +54,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-app.UseCors("AllowLocalhost");
+app.UseCors("AllowMultipleOrigins");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

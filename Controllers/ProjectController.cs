@@ -22,6 +22,7 @@ public class ProjectController : ControllerBase
     public async Task<ActionResult<IEnumerable<ProjectResponse>>> GetProjects()
     {
         var projects = await _context.Projects
+        .AsSplitQuery()
         .Include(p => p.MediaProjects)
             .ThenInclude(mp => mp.Media)
         .Include(p => p.SkillProjects)
@@ -31,6 +32,7 @@ public class ProjectController : ControllerBase
            Id = p.Id,
            Name = p.Name,
            Description = p.Description,
+           Company = p.Company,
            MediaList = p.MediaProjects.Select(mp => mp.Media).ToList(),
            SkillNames = p.SkillProjects.Select(sp => sp.Skill.Name).ToList()
        })

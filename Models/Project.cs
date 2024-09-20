@@ -16,7 +16,7 @@ namespace PortfolioSiteApi.Models
         public string Company {get; set;}
 
         [Column("client")]
-        public int Client { get; set; }
+        public string Client { get; set; }
 
         [Column("description")]
         public string Description {get;set;}

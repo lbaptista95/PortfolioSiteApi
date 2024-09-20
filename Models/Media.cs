@@ -18,6 +18,6 @@ namespace PortfolioSiteApi.Models
         [Column("url")]
         public string Url { get; set; }
 
-        public ICollection<MediaProject> MediaProjects { get; set; }
+        public MediaProject MediaProject { get; set; }
     }
 }
