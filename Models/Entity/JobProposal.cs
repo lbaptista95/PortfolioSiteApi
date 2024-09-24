@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace PortfolioSiteApi.Models
+namespace PortfolioSiteApi.Models.Entity
 {
     public class JobProposal
     {

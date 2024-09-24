@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace PortfolioSiteApi.DTOs
+namespace PortfolioSiteApi.Models.DTO
 {
     public class DbColumnInfo
     {

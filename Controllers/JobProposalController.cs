@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PortfolioSiteApi.Data;
-using PortfolioSiteApi.Models;
+using PortfolioSiteApi.Models.Entity;
 
 [Route("api/[controller]")]
 [ApiController]

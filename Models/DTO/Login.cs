@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace PortfolioSiteApi.DTOs
+namespace PortfolioSiteApi.Models.DTO
 {
     public class Login
     {

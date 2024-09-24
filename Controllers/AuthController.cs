@@ -2,9 +2,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using PortfolioSiteApi.Data;
-using PortfolioSiteApi.Models;
+using PortfolioSiteApi.Models.Entity;
 using PortfolioSiteApi.Tools;
-using PortfolioSiteApi.DTOs;
+using PortfolioSiteApi.Models.DTO;
 
 using System;
 using System.IdentityModel.Tokens.Jwt;

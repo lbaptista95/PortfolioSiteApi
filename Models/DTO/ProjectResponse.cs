@@ -1,6 +1,6 @@
-using PortfolioSiteApi.Models;
+using PortfolioSiteApi.Models.Entity;
 
-namespace PortfolioSiteApi.DTOs
+namespace PortfolioSiteApi.Models.DTO
 {
     public class ProjectResponse
     {

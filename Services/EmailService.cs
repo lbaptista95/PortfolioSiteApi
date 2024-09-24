@@ -2,7 +2,7 @@
 using MailKit.Net.Smtp;
 using Microsoft.Extensions.Configuration;
 using MimeKit;
-using PortfolioSiteApi.Models;
+using PortfolioSiteApi.Models.Entity;
 
 public class EmailService
 {

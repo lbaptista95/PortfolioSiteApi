@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using PortfolioSiteApi.DTOs;
+using PortfolioSiteApi.Models.DTO;
+using PortfolioSiteApi.Models.Entity;
 using PortfolioSiteApi.Data;
 
 namespace PortfolioSiteApi.Helpers

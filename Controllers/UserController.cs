@@ -2,10 +2,10 @@ using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PortfolioSiteApi.Data;
-using PortfolioSiteApi.Models;
+using PortfolioSiteApi.Models.Entity;
 using PortfolioSiteApi.Tools;
 using PortfolioSiteApi.Helpers;
-using PortfolioSiteApi.DTOs;
+using PortfolioSiteApi.Models.DTO;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 [Route("api/[controller]")]

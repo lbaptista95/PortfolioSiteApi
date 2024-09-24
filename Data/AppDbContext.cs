@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Org.BouncyCastle.Bcpg;
-using PortfolioSiteApi.Models;
+using PortfolioSiteApi.Models.Entity;
 
 namespace PortfolioSiteApi.Data
 {
